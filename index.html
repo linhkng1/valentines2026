@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <title>Will you be my ValenTiet? 💖</title>
 
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
   <style>
     body {
       margin: 0;
@@ -86,6 +89,9 @@
 </head>
 
 <body>
+
+  <audio id="songPlay" src="baby.mp3"></audio>
+
   <div class="card">
     <!-- Replace with your own photo -->
     <img src="photo.png" alt="Us together" />
@@ -128,10 +134,54 @@
     // For mobile taps
     noBtn.addEventListener("touchstart", moveButton);
 
+    const song = document.getElementById("songPlay");
+
     yesBtn.addEventListener("click", () => {
-      msg.style.display = "block";
-      yesBtn.innerText = "Best choice ever 🥰";
-    });
+    // show message
+    msg.style.display = "block";
+    yesBtn.innerText = "Best choice ever 🥰";
+
+    // play music (works because user clicked)
+    function playSegment(audio, start, end) {
+      audio.currentTime = start;
+      audio.play();
+
+      const timer = setInterval(() => {
+        if (audio.currentTime >= end) {
+          audio.pause();
+          clearInterval(timer);
+        }
+      }, 100);
+    }
+
+    playSegment(song, 45, 74);
+
+
+    // confetti burst
+    const duration = 2000;
+    const end = Date.now() + duration;
+
+    (function frame() {
+      confetti({
+        particleCount: 6,
+        angle: 60,
+        spread: 70,
+        origin: { x: 0 }
+      });
+
+      confetti({
+        particleCount: 6,
+        angle: 120,
+        spread: 70,
+        origin: { x: 1 }
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  });
+
   </script>
 </body>
 </html>
