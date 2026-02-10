@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Be My Valentine 💖</title>
+  <title>Will you be my ValenTiet? 💖</title>
 
   <style>
     body {
@@ -84,9 +84,9 @@
 <body>
   <div class="card">
     <!-- Replace with your own photo -->
-    <img src="your-photo.jpg" alt="Us together" />
+    <img src="photo.png" alt="Us together" />
 
-    <h1>Will you be my Valentine? 💗</h1>
+    <h1>Will you be my ValenTiet? 💗</h1>
 
     <div class="buttons">
       <button id="noBtn">No 🙈</button>
@@ -94,7 +94,7 @@
     </div>
 
     <div class="message" id="loveMsg">
-      YAYYY!! I love you ❤️
+      Good. You don't have a choice!
     </div>
   </div>
 
