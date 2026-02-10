@@ -52,6 +52,9 @@
       cursor: pointer;
       position: absolute;
       transition: 0.2s;
+
+      min-width: 220px;   /* equal width */
+      white-space: nowrap;
     }
 
     #yesBtn {
@@ -127,7 +130,7 @@
 
     yesBtn.addEventListener("click", () => {
       msg.style.display = "block";
-      yesBtn.innerText = "Best choice ever Tom 🥰";
+      yesBtn.innerText = "Best choice ever 🥰";
     });
   </script>
 </body>
